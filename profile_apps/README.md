@@ -1,17 +1,18 @@
-# profile_apps
+# 🪪 Digital Business Card - Flutter Project
 
-A new Flutter project.
+Ini adalah projek tugasan pembangunan aplikasi mudah alih menggunakan **Flutter**. Aplikasi ini memaparkan kad profil digital yang mengandungi maklumat peribadi dan pautan hubungan.
 
-## Getting Started
+## 📱 Paparan Aplikasi
+![Screenshot Aplikasi](MASUKKAN_LINK_GAMBAR_DI_SINI)
 
-This project is a starting point for a Flutter application.
+## 🛠️ Ciri-ciri Utama
+* **Reka Bentuk Moden**: Menggunakan Card widget dengan bayangan (Shadow) dan Gradient background.
+* **Maklumat Peribadi**: Nama penuh, tarikh lahir, dan lokasi.
+* **Ikon Interaktif**: Pautan ke Email, Telefon, dan Laman Web menggunakan Tooltip.
+* **Responsive**: Susunan ikon yang fleksibel menggunakan widget `Wrap`.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Cara Menjalankan Projek
+1. Pastikan Flutter SDK telah dipasang.
+2. Clone repository ini:
+   ```bash
+   git clone [https://github.com/sarah-gitbyte/profile_apps.git](https://github.com/sarah-gitbyte/profile_apps.git)

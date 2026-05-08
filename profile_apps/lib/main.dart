@@ -11,8 +11,11 @@ class MyProfileApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Profile Sarah',
-      theme: ThemeData(useMaterial3: true),
+      title: 'About Me',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.pink,
+      ),
       home: const ProfilePage(),
     );
   }
@@ -24,19 +27,21 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Menggunakan Container dengan Gradient untuk background yang cantik
       body: Container(
         width: double.infinity,
         height: double.infinity,
+        // Background Pink Gradient yang lebih fresh
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(0xFFece9e6), Color(0xFFffffff)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFFFFD1DC), Color(0xFFFFE4E1)],
           ),
         ),
         child: const Center(
-          child: ProfileCard(),
+          child: SingleChildScrollView(
+            child: ProfileCard(),
+          ),
         ),
       ),
     );
@@ -49,104 +54,132 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 350,
-      padding: const EdgeInsets.all(25),
+      width: 360,
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+      padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(30),
+        color: Colors.white.withValues(alpha: 0.9),
+        borderRadius: BorderRadius.circular(40),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
+           color: Colors.pink.withValues(alpha: 0.1),
+            blurRadius: 30,
+            offset: const Offset(0, 15),
           ),
         ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // 1. Gambar Profil dengan Border
+          // Tajuk About Me
+          const Text(
+            'ABOUT ME',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 4,
+              color: Color(0xFFD81B60),
+            ),
+          ),
+          const SizedBox(height: 25),
+
+          // Gambar Profil
           Container(
-            padding: const EdgeInsets.all(4),
+            padding: const EdgeInsets.all(5),
             decoration: const BoxDecoration(
-              color: Colors.blueGrey,
+              color: Colors.pinkAccent,
               shape: BoxShape.circle,
             ),
             child: const CircleAvatar(
-              radius: 55,
+              radius: 60,
+              backgroundColor: Colors.white,
               backgroundImage: AssetImage('assets/profile.jpg'),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 25),
 
-          // 2. Nama (Gunakan FontWeight.w900 untuk impak visual)
+          // Nama
           const Text(
             'NORSARAH AMANI BINTI SHAMSUL KAMAL',
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 22,
               fontWeight: FontWeight.w900,
-              color: Color(0xFF2C3E50),
-              letterSpacing: 1.2,
+              color: Color(0xFF4A148C),
+              height: 1.2,
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 10),
 
-          // 3. Lokasi & Tarikh
-          Row(
+          // Lokasi & Tarikh
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(Icons.location_on, size: 16, color: Colors.redAccent),
-              SizedBox(width: 4),
+            children: [
+              Icon(Icons.cake_rounded, size: 16, color: Colors.pinkAccent),
+              SizedBox(width: 6),
               Text(
-                'Perak, Malaysia • 20 June 04',
-                style: TextStyle(color: Colors.grey, fontSize: 14),
+                '20 June 2004 • Perak, MY',
+                style: TextStyle(
+                  color: Colors.blueGrey,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ],
           ),
 
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
-            child: Divider(thickness: 0.5),
+            padding: EdgeInsets.symmetric(vertical: 25),
+            child: Divider(thickness: 0.8, color: Color(0xFFFCE4EC)),
           ),
 
-          // 4. Bio Quote
+          // Quote
           const Text(
             '"we can try again."',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16,
               fontStyle: FontStyle.italic,
-              color: Colors.blueGrey,
+              color: Colors.pink,
+              fontWeight: FontWeight.w300,
             ),
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: 30),
 
-          // 5. Ikon Hubungan menggunakan Wrap
-          Wrap(
-            spacing: 20,
-            children: [
-              _buildSocialIcon(Icons.email, 'sarahamani0620@gmail.com'),
-              _buildSocialIcon(Icons.phone, '01120800353'),
-              _buildSocialIcon(Icons.language, 'sarah.dev'),
-            ],
-          ),
+          // Info Hubungan (Keluar terus)
+          _buildInfoRow(Icons.email_rounded, 'sarahamani0620@gmail.com'),
+          const SizedBox(height: 12),
+          _buildInfoRow(Icons.phone_android_rounded, '01120800353'),
+          const SizedBox(height: 12),
+          _buildInfoRow(Icons.language_rounded, 'sarah.dev'),
         ],
       ),
     );
   }
 
-  // Widget bantuan untuk bina butang ikon yang konsisten
-  Widget _buildSocialIcon(IconData icon, String detail) {
-    return Tooltip(
-      message: detail,
-      child: Container(
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: const Color(0xFF2C3E50),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Icon(icon, color: Colors.white, size: 22),
+  // Widget bantuan untuk baris info
+  Widget _buildInfoRow(IconData icon, String text) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFF1F3),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.pinkAccent, size: 20),
+          const SizedBox(width: 15),
+          Expanded(
+            child: Text(
+              text,
+              style: const TextStyle(
+                fontSize: 14,
+                color: Color(0xFF880E4F),
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

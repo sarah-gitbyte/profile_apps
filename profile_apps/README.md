@@ -3,7 +3,7 @@
 Ini adalah projek tugasan pembangunan aplikasi mudah alih menggunakan **Flutter**. Aplikasi ini memaparkan kad profil digital yang mengandungi maklumat peribadi dan pautan hubungan.
 
 ## 📱 Paparan Aplikasi
-![Screenshot Aplikasi](<img width="1918" height="879" alt="Screenshot 2026-05-08 165604" src="https://github.com/user-attachments/assets/c167bf56-d3a7-4772-958a-b862a299ff5d" />
+![Screenshot Aplikasi](<img width="1916" height="877" alt="Screenshot 2026-05-08 174251" src="https://github.com/user-attachments/assets/36e13da9-3efa-4ce6-96fa-0c32ccd8e671" />
 )
 
 ## 🛠️ Ciri-ciri Utama

@@ -146,7 +146,7 @@ class ProfileCard extends StatelessWidget {
           ),
           const SizedBox(height: 30),
 
-          // Info Hubungan (Keluar terus)
+          // Info Hubungan
           _buildInfoRow(Icons.email_rounded, 'sarahamani0620@gmail.com'),
           const SizedBox(height: 12),
           _buildInfoRow(Icons.phone_android_rounded, '01120800353'),

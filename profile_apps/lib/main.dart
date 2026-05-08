@@ -30,7 +30,7 @@ class ProfilePage extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        // Background Pink Gradient yang lebih fresh
+
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -71,7 +71,7 @@ class ProfileCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Tajuk About Me
+          // Tajuk 
           const Text(
             'ABOUT ME',
             style: TextStyle(
@@ -135,7 +135,7 @@ class ProfileCard extends StatelessWidget {
 
           // Quote
           const Text(
-            '"we can try again."',
+            '"we can always try again."',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16,
